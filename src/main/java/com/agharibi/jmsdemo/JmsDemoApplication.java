@@ -12,10 +12,10 @@ public class JmsDemoApplication {
     public static void main(String[] args) throws Exception {
 
 
-        // Setting up simple activeMQ
         ActiveMQServer server = ActiveMQServers.newActiveMQServer(new ConfigurationImpl()
-                .setPersistenceEnabled(Boolean.FALSE)
+                .setPersistenceEnabled(false)
                 .setJournalDirectory("target/data/journal")
+                .setSecurityEnabled(false)
                 .addAcceptorConfiguration("invm", "vm://0"));
 
         server.start();
